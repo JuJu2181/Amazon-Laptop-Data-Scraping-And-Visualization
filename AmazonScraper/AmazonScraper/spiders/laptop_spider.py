@@ -3,13 +3,16 @@ import scrapy
 class LaptopSpider(scrapy.Spider):
     name = "laptop"
     page_no = 1
-    base_url = 'https://www.amazon.com/s?k=Laptop'
+    base_url = 'https://www.amazon.com'
+    brands = ['lenovo','hp','asus','samsung','dell','microsoft','msi','acer','apple','alienware','gigabyte','generic','panasonic','lg','excaliberpc']
     def start_requests(self):
         urls = []
-        brands = ['lenovo','hp','asus','samsung','dell','microsoft','msi','acer','apple','alienware','gigabyte','generic','panasonic','lg','excaliberpc']
-        while self.page_no <= 20:
-            urls.append(f'{self.base_url}&page={self.page_no}')
-            self.page_no += 1
+        # urls = [f"{self.base_url}/s?k=Laptop"]
+        # while self.page_no <= 20:
+        #     urls.append(f'{self.base_url}&page={self.page_no}')
+        #     self.page_no += 1
+        for brand in self.brands:
+            urls.append(f"{self.base_url}/s?k={brand}+Laptop")
         for url in urls:
             yield scrapy.Request(url=url,callback=self.parse)
     
@@ -31,7 +34,8 @@ class LaptopSpider(scrapy.Spider):
             }
         # self.page_no+=1 
         # next_page = f'{self.base_url}&page={self.page_no+1}'
-        # next_page = response.css('a.s-pagination-item.s-pagination-next.s-pagination-button.s-pagination-separator').attrib['href']
-        # # print(f"temp:{next_page}")
-        # if next_page is not None:
-        #     yield scrapy.follow(next_page,callback=self.parse)
+        next_page = response.css('a.s-pagination-item.s-pagination-next.s-pagination-button.s-pagination-separator').attrib['href']
+        next_page = f"{self.base_url}/{next_page}"
+        # print(f"temp:{next_page}")
+        if next_page is not None:
+            yield response.follow(next_page,callback=self.parse)
