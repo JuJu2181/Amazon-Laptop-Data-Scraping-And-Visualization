@@ -22,6 +22,7 @@ class AmazonProductSpider(scrapy.Spider):
         laptops = response.css('div.s-result-item.s-asin')
         print(f"Total {len(laptops)} laptops found in this page")
 
+
         for link in response.css('a.a-link-normal.s-no-outline'):
             href = link.css('::attr(href)').get()
             if not href:
@@ -38,6 +39,7 @@ class AmazonProductSpider(scrapy.Spider):
         print(f"temp:{next_page}")
         if next_page is not None:
             yield response.follow(next_page,callback=self.parse)      
+
 
     def parse_product(self, response):
         page = response 
