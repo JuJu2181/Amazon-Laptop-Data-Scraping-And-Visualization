@@ -1,3 +1,4 @@
+# This is the main scraping code for the originally collected data which was cleaned and visualized
 import scrapy
 from scrapy import Request
 from scrapy.linkextractors import LinkExtractor
