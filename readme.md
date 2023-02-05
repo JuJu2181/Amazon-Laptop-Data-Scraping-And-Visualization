@@ -17,7 +17,7 @@
 ### Data Description
 - data.csv > Original raw data
 - laptop_data_cleaned.csv > Cleaned data
-- new_data_collected.csv > New extra data
+- new_data_collected.csv > New extra data collected for some analysis
 
 ### TODO:
 - [X] Use Scrapy to collect data from amazon
