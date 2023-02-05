@@ -19,6 +19,8 @@
 - laptop_data_cleaned.csv > Cleaned data
 - new_data_collected.csv > New extra data
 
+### Documentation
+[Finding Report](https://docs.google.com/document/d/141idz7-FPSGZIrd_Q2HySUHfPfu_kJKFA_oeyQLM-sA/edit?usp=sharing)
 ### TODO:
 - [X] Use Scrapy to collect data from amazon
 - [X] Create a plot of price vs producsts (group by)
