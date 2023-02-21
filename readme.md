@@ -35,3 +35,4 @@
 The necessary links for documentation are attached alongisde here:  
 - [Findings Report](https://docs.google.com/document/d/141idz7-FPSGZIrd_Q2HySUHfPfu_kJKFA_oeyQLM-sA/edit?usp=sharing)
 - [Project Documentation](https://docs.google.com/document/d/143cFhar16zDGwyG6kqr3r5lRxjaT3ogiVHSZcZp-ljA/edit?usp=sharing)
+- [Project Presentation](https://docs.google.com/presentation/d/1o5BLxuwSMcylKQdu1tdX6I4n4zSMMt6G/edit?usp=share_link&ouid=102773386619138444338&rtpof=true&sd=true)
